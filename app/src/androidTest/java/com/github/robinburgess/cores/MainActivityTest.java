@@ -23,6 +23,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
     private static final int RED = Color.argb(255, 255, 0, 0);
+    private static final int GREEN = Color.argb(255, 0, 255, 0);
+    private static final int BLUE = Color.argb(255, 0, 0, 255);
+    private static final int YELLOW = Color.argb(255, 255, 255, 0);
+    private static final int PURPLE = Color.argb(255, 255, 0, 255);
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =
@@ -33,10 +37,55 @@ public class MainActivityTest {
         onView(withId(R.id.word)).check(matches(withText("vermelho")));
         onView(withId(R.id.colourTopLeft)).check(matches(
                 withBackgroundColour(RED)));
+        onView(withId(R.id.colourTopRight)).check(matches(
+                withBackgroundColour(GREEN)));
+        onView(withId(R.id.colourBottomLeft)).check(matches(
+                withBackgroundColour(BLUE)));
+        onView(withId(R.id.colourBottomRight)).check(matches(
+                withBackgroundColour(YELLOW)));
         onView(withId(R.id.colourTopLeft)).perform(click());
         onView(withId(R.id.word)).check(matches(withText("amarelo")));
+        onView(withId(R.id.colourTopLeft)).check(matches(
+                withBackgroundColour(PURPLE)));
+        onView(withId(R.id.colourTopRight)).check(matches(
+                withBackgroundColour(YELLOW)));
+        onView(withId(R.id.colourBottomLeft)).check(matches(
+                withBackgroundColour(GREEN)));
+        onView(withId(R.id.colourBottomRight)).check(matches(
+                withBackgroundColour(BLUE)));
         onView(withId(R.id.colourTopRight)).perform(click());
         onView(withId(R.id.word)).check(matches(withText("vermelho")));
+        onView(withId(R.id.colourTopLeft)).check(matches(
+                withBackgroundColour(RED)));
+        onView(withId(R.id.colourTopRight)).check(matches(
+                withBackgroundColour(GREEN)));
+        onView(withId(R.id.colourBottomLeft)).check(matches(
+                withBackgroundColour(BLUE)));
+        onView(withId(R.id.colourBottomRight)).check(matches(
+                withBackgroundColour(YELLOW)));
+    }
+
+    @Test
+    public void chooseIncorrectAnswer() {
+        onView(withId(R.id.word)).check(matches(withText("vermelho")));
+        onView(withId(R.id.colourTopLeft)).check(matches(
+                withBackgroundColour(RED)));
+        onView(withId(R.id.colourTopRight)).check(matches(
+                withBackgroundColour(GREEN)));
+        onView(withId(R.id.colourBottomLeft)).check(matches(
+                withBackgroundColour(BLUE)));
+        onView(withId(R.id.colourBottomRight)).check(matches(
+                withBackgroundColour(YELLOW)));
+        onView(withId(R.id.colourTopRight)).perform(click());
+        onView(withId(R.id.word)).check(matches(withText("vermelho")));
+        onView(withId(R.id.colourTopLeft)).check(matches(
+                withBackgroundColour(RED)));
+        onView(withId(R.id.colourTopRight)).check(matches(
+                withBackgroundColour(GREEN)));
+        onView(withId(R.id.colourBottomLeft)).check(matches(
+                withBackgroundColour(BLUE)));
+        onView(withId(R.id.colourBottomRight)).check(matches(
+                withBackgroundColour(YELLOW)));
     }
 
     private static Matcher<View> withBackgroundColour(final int colour) {

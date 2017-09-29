@@ -1,52 +1,55 @@
-[
-  {
-    "word": "vermelho",
-    "options": [
-      {
-        "colour": "0xff0000",
-        "name": "red",
-        "correct": true
-      },
-      {
-        "colour": "0x00ff00",
-        "name": "green",
-        "correct": false
-      },
-      {
-        "colour": "0x0000ff",
-        "name": "blue",
-        "correct": false
-      },
-      {
-        "colour": "0xffff00",
-        "name": "yellow",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "word": "amarelo",
-    "options": [
-      {
-        "colour": "0xff00ff",
-        "name": "purple",
-        "correct": false
-      },
-      {
-        "colour": "0xffff00",
-        "name": "yellow",
-        "correct": true
-      },
-      {
-        "colour": "0x00ff00",
-        "name": "green",
-        "correct": false
-      },
-      {
-        "colour": "0x0000ff",
-        "name": "blue",
-        "correct": false
-      }
-    ]
-  }
-]
+{
+  "current_challenge_index": 0,
+  "challenges": [
+    {
+      "word": "vermelho",
+      "options": [
+        {
+          "colour": "0xff0000",
+          "name": "red",
+          "correct": true
+        },
+        {
+          "colour": "0x00ff00",
+          "name": "green",
+          "correct": false
+        },
+        {
+          "colour": "0x0000ff",
+          "name": "blue",
+          "correct": false
+        },
+        {
+          "colour": "0xffff00",
+          "name": "yellow",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "word": "amarelo",
+      "options": [
+        {
+          "colour": "0xff00ff",
+          "name": "purple",
+          "correct": false
+        },
+        {
+          "colour": "0xffff00",
+          "name": "yellow",
+          "correct": true
+        },
+        {
+          "colour": "0x00ff00",
+          "name": "green",
+          "correct": false
+        },
+        {
+          "colour": "0x0000ff",
+          "name": "blue",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
